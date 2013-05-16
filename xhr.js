@@ -48,6 +48,14 @@ XHR.prototype.get = function(url, onSuccess, onError, extraParams) {
 		xhr.open("GET", url, extraParams.async);
 		xhr.setRequestHeader('Content-Type', extraParams.contentType);
 
+    // Add any provided headers
+    if(extraParams.headers) {
+      for(i in extraParams.headers) {
+        var header = extraParams.headers[i];
+        xhr.setRequestHeader(header.name, header.value);
+      }
+    }
+
 		// If we need to authenticate
 		if (extraParams.shouldAuthenticate) {
 			var authstr = 'Basic ' + Titanium.Utils.base64encode(extraParams.username + ':' + extraParams.password); 
