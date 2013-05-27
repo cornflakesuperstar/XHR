@@ -11,7 +11,7 @@ In your app.js (or elsewhere), call:
 For more information check out the [examples.js](https://github.com/raulriera/XHR/blob/master/examples.js) file. Or browse around the [xhr.js](https://github.com/raulriera/XHR/blob/master/xhr.js) file. You can find in there support for GET, POST, PUT and DELETE (called destroy for reserved words problems)
 
 # Last-Modified header caching
-This project fork has provides an API for titanium projects to be able to perform HTTP requests and cache the responses locally until the Last-Modified header changes on the server.
+This project fork has provided an API for titanium projects to be able to perform HTTP requests and cache the responses locally until the Last-Modified header changes on the server.
 
 With Ruby on Rails, the Last-Modified header for GET requests can be set using stale?:
 [ActionController::ConditionalGet.stale?](http://api.rubyonrails.org/classes/ActionController/ConditionalGet.html#method-i-stale-3F)
@@ -36,6 +36,8 @@ Ideally, this technique wouldn't require both a HEAD request and a GET request.
 
 Unfortunately, the Titanium HTTP client (as of Titanium version 3.0.2), does not correctly set response headers as per:
 http://developer.appcelerator.com/question/150199/getresponseheader-not-working-in-onreadystatechange-function
+
+and therefore at this time, both a HEAD and a GET request are neccessary.
 
 # About:
 Created by Raul Riera, [@raulriera](http://twitter.com/raulriera)  
