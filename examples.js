@@ -1,12 +1,6 @@
 var XHR = require("/lib/xhr");
 var xhr = new XHR();
 
-// Normal plain old request without caching
-xhr.get("http://freegeoip.net/json/", onSuccessCallback, onErrorCallback);
-
-// Normal plain old request with a 5mins caching
-xhr.get("http://freegeoip.net/json/", onSuccessCallback, onErrorCallback, { ttl: 5 });
-
 // Normal plain old request with a custom HTTP header
 var request_headers = [
   { name: 'Accept',      value: 'application/json' },
